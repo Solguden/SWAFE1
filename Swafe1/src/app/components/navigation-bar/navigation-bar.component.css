@@ -1,0 +1,15 @@
+.bar{
+    background-color: aqua;
+    width: 100%;
+    padding-left: 15%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+a{
+    display: flex;
+    text-decoration: none;
+    margin: 5px 20px;
+    align-self: center;
+}

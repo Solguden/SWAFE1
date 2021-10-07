@@ -1,0 +1,35 @@
+.app-layout{
+width: 100%;
+    /* flex-direction: row; */
+    
+    /* justify-content: center; */
+    
+}
+
+.app-content{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.app-router{
+    width: 70%;
+    min-height: 500px;
+    padding: 20px;
+}
+
+.filler-left{
+    width: 15%;
+    background-color: cadetblue;
+}
+
+.filler-right{
+    width: 15%;
+    background-color: cadetblue;
+}
+
+header, footer{
+    display: flex;
+    justify-content: center;
+    background-color: khaki;
+}
