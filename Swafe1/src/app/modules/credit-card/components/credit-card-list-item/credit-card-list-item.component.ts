@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CreditCard } from 'src/app/models/creditcard';
 
 @Component({
   selector: 'app-credit-card-list-item',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./credit-card-list-item.component.css']
 })
 export class CreditCardListItemComponent implements OnInit {
-
+  @Input() creditCard!: CreditCard
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.creditCard)
   }
 
+  goToDetails(e:number){
+    console.log(e)
+  }
 }

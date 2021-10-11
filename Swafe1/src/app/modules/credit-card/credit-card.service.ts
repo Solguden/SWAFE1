@@ -17,12 +17,12 @@ export class CreditCardService {
 
   postCreditCards(card:CreditCard): Observable<CreditCard[]>{
     return this.http.post<CreditCard[]>(`${this.rootUrl}/credit_cards`,{
-      Card_Number: card.Card_Number,
-      Csc_Code: card.Csc_Code,
-      Cardholder_Name: card.Cardholder_Name,
-      Expiration_Date_Month: card.Expiration_Date_Month,
-      Expiration_Date_Year: card.Expiration_Date_Year,
-      Issuer: card.Issuer
+      Card_Number: card.card_number,
+      Csc_Code: card.csc_code,
+      Cardholder_Name: card.cardholder_name,
+      Expiration_Date_Month: card.expiration_date_month,
+      Expiration_Date_Year: card.expiration_date_year,
+      Issuer: card.issuer
     })
   }
 

@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CreditCardModule } from './modules/credit-card/credit-card.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CreditCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

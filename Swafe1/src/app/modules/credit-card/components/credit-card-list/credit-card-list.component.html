@@ -1,1 +1,5 @@
-<p>credit-card-list works!</p>
+<div *ngIf="cardList">
+    <div *ngFor="let card of cardList">
+        <app-credit-card-list-item [creditCard]="card"> </app-credit-card-list-item>
+    </div>
+</div>

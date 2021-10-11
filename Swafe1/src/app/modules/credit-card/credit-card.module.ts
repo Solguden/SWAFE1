@@ -18,6 +18,9 @@ import { CreditCardDetailComponent } from './credit-card-detail/credit-card-deta
   imports: [
     CommonModule,
     CreditCardRoutingModule
+  ],
+  exports: [
+    CreditCardListComponent
   ]
 })
 export class CreditCardModule { }
