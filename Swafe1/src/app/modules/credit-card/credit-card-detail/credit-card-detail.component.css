@@ -1,0 +1,17 @@
+/* label {
+    padding-right: 10px;
+} */
+
+.info-field {
+    padding-top: 20px;
+
+}
+
+input {
+    float: right;
+    /* margin-right: 100px; */
+}
+
+.dltButton {
+    margin-top: 20px;
+}
