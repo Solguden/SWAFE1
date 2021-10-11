@@ -16,20 +16,25 @@ width: 100%;
     width: 70%;
     min-height: 500px;
     padding: 20px;
+    background-color: #ffeec3;
 }
 
 .filler-left{
     width: 15%;
-    background-color: cadetblue;
+    background-color: #ee3253;
 }
 
 .filler-right{
     width: 15%;
-    background-color: cadetblue;
+    background-color: #ee3253;
 }
 
 header, footer{
     display: flex;
     justify-content: center;
-    background-color: khaki;
+    background-color:#FFE11D;
+}
+
+footer{
+    background-color: #302E3c;
 }
