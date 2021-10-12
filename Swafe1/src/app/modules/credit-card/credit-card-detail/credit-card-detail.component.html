@@ -1,34 +1,74 @@
-<div>
-    <div class="info-field">
+<div class="container">
+    <div class="info-field" >
         <label for="cardholder">Cardholder name:</label>
-        <input type="text" class="cardholder">
+        <!-- <input ng-model="creditCard.cardholder_name"> -->
+        <h4 id="cardholder">{{creditCard.cardholder_name}}</h4>
     </div>
 
     <div class="info-field">
         <label for="cardNumber">Card number:</label>
-        <input type="text" class="cardNumber">
+        <h4>{{creditCard.card_number}}</h4>
     </div>
 
     <div class="info-field">
         <label for="csc">CSC code:</label>
-        <input type="text" class="csc">
+        <h4>{{creditCard.csc_code}}</h4>
     </div>
 
     <div class="info-field">
         <label for="expiration">Expiration date:* </label>
-        <input type="text" class="expiration">
+        <h4>{{creditCard.expiration_date_month}} / {{creditCard.expiration_date_year}}</h4>
     </div>
 
     <div class="info-field">
         <label for="issuer">Card Issuer: </label>
-        <input type="text" class="issuer">
+        <h4>{{creditCard.issuer}}</h4>
     </div>
 </div>
 
 <div class="dltButton">
-    <button class="btn btn-primary">
+    <button class="btn btn-primary" (click)="deleteCard(creditCard)">
         Delete creditcard
     </button>
 </div>
+
+<h2>Transactions </h2>
+
+<div class="title-container">
+    <div class="item">
+        Date
+    </div>
+    <div class="item">
+        Amount
+    </div>
+    <div class="item">
+        Currency
+    </div>
+    <div class="item">
+        Comment
+    </div>
+</div>
+<div *ngIf="transactionList">
+    <div class="title-container" *ngFor="let transaction of transactionList">
+        <div class="item">
+            {{transaction.date | date}}
+        </div>
+        <div class="item">
+            {{transaction.amount | number:'1.1-2'}}
+        </div>
+        <div class="item">
+            {{transaction.currency}}
+        </div>
+        <div class="item">
+            {{transaction.comment}}
+        </div>
+    </div>
+
+</div>
+<!-- <div *ngIf="cardList">
+    <div *ngFor="let card of cardList">
+        <app-credit-card-list-item [creditCard]="card"> </app-credit-card-list-item>
+    </div>
+</div> -->
 
 

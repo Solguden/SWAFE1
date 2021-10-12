@@ -2,16 +2,49 @@
     padding-right: 10px;
 } */
 
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 .info-field {
-    padding-top: 20px;
-
+    padding-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
-input {
+label {
+    float: left;
+}
+
+h4 {
+    display: inline;
     float: right;
-    /* margin-right: 100px; */
 }
+
+.title-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.item{
+    display: flex;
+    align-self:flex-start;
+}
+
+/* input {
+    float: right;
+    margin-right: 100px;
+}
+
+p {
+    float: right;
+} */
 
 .dltButton {
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-left: 50px;
 }
