@@ -10,8 +10,9 @@ const routes: Routes = [
     component: CreditCardAddComponent
   },
   {
-    path: 'detail',
-    component: CreditCardDetailComponent
+    path: 'detail/:card_number',
+    component: CreditCardDetailComponent,
+    // data : {some_data: 'some value'}
   },
   
 ];

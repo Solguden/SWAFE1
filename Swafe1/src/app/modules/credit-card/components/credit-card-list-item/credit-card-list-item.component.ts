@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { CreditCard } from 'src/app/models/creditcard';
 
 @Component({
@@ -8,7 +9,7 @@ import { CreditCard } from 'src/app/models/creditcard';
 })
 export class CreditCardListItemComponent implements OnInit {
   @Input() creditCard!: CreditCard
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     console.log(this.creditCard)
@@ -16,5 +17,6 @@ export class CreditCardListItemComponent implements OnInit {
 
   goToDetails(e:number){
     console.log(e)
+    this.router.navigate([`/detail/${e}`, {data: this.creditCard}])
   }
 }
