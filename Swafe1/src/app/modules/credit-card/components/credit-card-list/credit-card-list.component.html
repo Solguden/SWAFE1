@@ -1,3 +1,14 @@
+<div class="title-container">
+    <div class="item">
+        Card Number
+    </div>
+    <div class="item">
+        Cardholder Name
+    </div>
+    <div class="item">
+        Issuer
+    </div>
+</div>
 <div *ngIf="cardList">
     <div *ngFor="let card of cardList">
         <app-credit-card-list-item [creditCard]="card"> </app-credit-card-list-item>

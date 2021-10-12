@@ -1,10 +1,10 @@
 import {CreditCard} from './creditcard'
 
 export interface Transaction{
-    Credit_Card: CreditCard,
-    Uid: string,
-    Amount: number,
-    Comment: string,
-    Date: number,
-    Currency: string
+    credit_card: CreditCard,
+    uid: string,
+    amount: number,
+    comment: string,
+    date: number,
+    currency: string
 }

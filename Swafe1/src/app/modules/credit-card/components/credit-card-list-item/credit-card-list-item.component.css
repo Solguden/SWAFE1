@@ -8,3 +8,7 @@
     background-color: black;
     color: white;
 }
+.item{
+    display: flex;
+    align-self: start;
+}

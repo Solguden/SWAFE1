@@ -37,4 +37,11 @@ header, footer{
 
 footer{
     background-color: #302E3c;
+    display: flex;
+    flex-direction: row;
+}
+
+.feet{
+    height: 10%;
+    background-color:#844d38 ;
 }
