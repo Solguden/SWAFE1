@@ -12,11 +12,11 @@ export class CreditCardListItemComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.creditCard)
+
   }
 
   goToDetails(e:number){
     console.log(e)
-    this.router.navigate([`/detail/${e}`, {data: this.creditCard}])
+    this.router.navigate([`/detail/${e}`])
   }
 }

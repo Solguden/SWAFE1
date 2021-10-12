@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class CreditCardService {
   rootUrl = `http://localhost:3000`
-  
+
+  public selectedCard!: CreditCard
   constructor(private http: HttpClient) { }
 
   getCreditCards(): Observable<CreditCard[]>{
@@ -29,5 +30,4 @@ export class CreditCardService {
   deleteCreditCards(cardnumber:number): Observable<CreditCard[]>{
     return this.http.delete<CreditCard[]>(`${this.rootUrl}/credit_cards/${cardnumber}`)
   }
-
 }
