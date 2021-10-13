@@ -1,1 +1,11 @@
-<p>transaction-list-item works!</p>
+<div class="container" (click)="goToOverview(transaction.uid)">
+    <div class="item">
+        {{transaction.credit_card.card_number}}
+    </div>
+    <div class="item">
+        {{transaction.amount | number:'1.1-2'}} {{transaction.currency}}
+    </div>
+    <div class="item">
+        {{transaction.date | date}}
+    </div>
+</div>

@@ -1,0 +1,11 @@
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 30%;
+  }
+  
+  .dltButton {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}

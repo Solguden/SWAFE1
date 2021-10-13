@@ -1,1 +1,31 @@
-<p>transaction-overview works!</p>
+<form [formGroup]="transactionForm">
+    <div class="form-wrapper">
+        <label for="credit_card">Credit card number</label>
+        <select formControlName="credit_card">
+            <option value="-1">Choose a credit card</option>
+            <option *ngFor="let card of creditCards$ | async" [value]="card.card_number">
+                {{card.card_number}}
+            </option>
+        </select>
+        <label for="amount">Amount</label>
+        <input type="text" formControlName="amount">
+        <label for="currency">Currency</label>
+        <input type="text" formControlName="currency">
+        <label for="comment">Comment</label>
+        <input type="text" formControlName="comment">
+        <label *ngIf="newTransaction" for="date">Date</label>
+        <input *ngIf="newTransaction" type="date" formControlName="date">
+        <label *ngIf="!newTransaction" for="date">Date</label>
+        <input *ngIf="!newTransaction" type="text" formControlName="date" [ngModel]="transaction.date | date">
+    </div>
+</form>
+<div *ngIf="!newTransaction" class="dltButton">
+    <button class="btn btn-primary" (click)="deleteTransaction(transaction)">
+        Delete transaction
+    </button>
+</div>
+<div *ngIf="newTransaction" class="dltButton">
+    <button class="btn btn-primary" (click)="saveTransaction(transaction)">
+        Save transaction
+    </button>
+</div>

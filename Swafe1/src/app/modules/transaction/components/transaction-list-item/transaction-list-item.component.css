@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.container:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+.item{
+    display: flex;
+    align-self: start;
+}

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Transaction } from 'src/app/models/transaction';
 
 @Component({
   selector: 'app-transaction-list-item',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transaction-list-item.component.css']
 })
 export class TransactionListItemComponent implements OnInit {
+  @Input() transaction!: Transaction
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  goToOverview(e: string | undefined) {
+    this.router.navigate([`transaction/overview/${e}`])
   }
 
 }

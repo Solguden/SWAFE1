@@ -1,1 +1,26 @@
-<p>transaction-list works!</p>
+<select [(ngModel)]="selectedOption" (ngModelChange)="filter()">
+    <option value="-1">Show all</option>
+    <option *ngFor="let card of creditCards"
+    [value]="card.card_number">
+    {{card.card_number}}
+    </option>
+</select>
+<button class="btn btn-primary addButton" (click)="goToOverview('0')">
+    Add transaction
+</button>
+<div class="title-container">
+    <div class="item">
+        Card Number
+    </div>
+    <div class="item">
+        Amount
+    </div>
+    <div class="item">
+        Date
+    </div>
+</div>
+<div *ngIf="filteredTransactions">
+    <div *ngFor="let transaction of filteredTransactions">
+        <app-transaction-list-item [transaction]="transaction"> </app-transaction-list-item>
+    </div>
+</div>
