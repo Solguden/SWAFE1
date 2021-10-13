@@ -1,1 +1,34 @@
-<p>credit-card-add works!</p>
+<h1>Reactive forms</h1>
+<form [formGroup]="creditCardForm" (ngSubmit)="onSubmit()">
+	<div class="form-wrapper">
+		<label for="card_number">Card number:</label>
+		<input type="text" formControlName="card_number">
+        <br />
+
+        <label for="cardholder_name">Cardholder name:</label>
+		<input type="text"  formControlName="cardholder_name">
+        <br />
+
+		<label for="csc_code">CSC:</label>
+		<input type="text" formControlName="csc_code">
+        <br />
+
+        <label for="expiration_date_month">Expiration date:*</label>
+		<input type="month" formControlName="expiration_date_month">
+        <br />
+
+
+        <label for="issuer">Issuer:</label>
+		<input type="text" formControlName="issuer">
+        <br />
+
+
+		<hr />
+		<button type="submit">Submit</button>
+		<!-- <label for="phone">Phone</label>
+		<input type="text" formControlName="phone">
+		<label for="email">E-mail</label>
+		<input type="text"  formControlName="email">    
+		<hr /> -->
+    </div>
+</form>
