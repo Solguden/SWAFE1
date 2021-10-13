@@ -9,6 +9,5 @@
     color: white;
 }
 .item{
-    display: flex;
-    align-self: start;
+    width: 30%;
 }

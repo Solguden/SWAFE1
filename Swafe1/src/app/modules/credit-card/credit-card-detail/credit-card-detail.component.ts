@@ -17,7 +17,7 @@ export class CreditCardDetailComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute, 
-    private cardService:CreditCardService,
+    private cardService: CreditCardService,
     private transactionService: TransactionService) { }
 
   ngOnInit(): void {
@@ -59,5 +59,10 @@ export class CreditCardDetailComponent implements OnInit {
 
   deleteCard(card: CreditCard) {
     console.log(card)
+    this.cardService.deleteCreditCards(card.card_number).subscribe(res => {
+      console.log(res)
+      // Lav pop-up vindue?
+      // Redirect til home?
+    })
   }
 }

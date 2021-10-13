@@ -5,6 +5,7 @@ import { CreditCardListComponent } from './components/credit-card-list/credit-ca
 import { CreditCardListItemComponent } from './components/credit-card-list-item/credit-card-list-item.component';
 import { CreditCardRoutingModule } from './credit-card-routing.module';
 import { CreditCardDetailComponent } from './credit-card-detail/credit-card-detail.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,9 @@ import { CreditCardDetailComponent } from './credit-card-detail/credit-card-deta
   ],
   imports: [
     CommonModule,
-    CreditCardRoutingModule
+    CreditCardRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     CreditCardListComponent
