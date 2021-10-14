@@ -17,7 +17,6 @@ export class TransactionService {
   postTransaction(transaction:Transaction): Observable<Transaction[]>{
     return this.http.post<Transaction[]>(`${this.rootUrl}/transactions`,{
       credit_card: transaction.credit_card,
-      uid: transaction.uid,
       amount: transaction.amount,
       comment: transaction.comment,
       date: transaction.date,
@@ -25,7 +24,7 @@ export class TransactionService {
     })
   }
 
-  deleteTransaction(transaction_uid:number): Observable<Transaction[]>{
+  deleteTransaction(transaction_uid: string): Observable<Transaction[]>{
     return this.http.delete<Transaction[]>(`${this.rootUrl}/transactions/${transaction_uid}`)
   }
 

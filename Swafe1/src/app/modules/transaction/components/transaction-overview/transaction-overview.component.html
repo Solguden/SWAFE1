@@ -1,20 +1,41 @@
 <form [formGroup]="transactionForm">
     <div class="form-wrapper">
         <label for="credit_card">Credit card number</label>
-        <select formControlName="credit_card">
+        <select formControlName="credit_card" (ngModelChange)="checkCreditCardValue()">
             <option value="-1">Choose a credit card</option>
             <option *ngFor="let card of creditCards$ | async" [value]="card.card_number">
                 {{card.card_number}}
             </option>
         </select>
+        <div *ngIf="creditCardError" class="error">
+            Please choose a credit card
+        </div>
         <label for="amount">Amount</label>
         <input type="text" formControlName="amount">
+        <div *ngIf="amount.invalid && (amount.dirty || amount.touched)">
+            <div *ngIf="amount.errors?.required" class="error">
+              Amount is required
+            </div>
+            <div *ngIf="amount.errors?.pattern" class="error">
+              Amount must be a number
+            </div>
+        </div>
         <label for="currency">Currency</label>
         <input type="text" formControlName="currency">
+        <div *ngIf="currency.invalid && (currency.dirty || currency.touched)">
+            <div *ngIf="currency.errors?.required" class="error">
+              Currency is required
+            </div>
+        </div>
         <label for="comment">Comment</label>
-        <input type="text" formControlName="comment">
+        <textarea class="multiline" formControlName="comment"></textarea>
         <label *ngIf="newTransaction" for="date">Date</label>
         <input *ngIf="newTransaction" type="date" formControlName="date">
+        <div *ngIf="date.invalid && (date.dirty || date.touched)">
+            <div *ngIf="date.errors?.required" class="error">
+              Date is required
+            </div>
+        </div>
         <label *ngIf="!newTransaction" for="date">Date</label>
         <input *ngIf="!newTransaction" type="text" formControlName="date" [ngModel]="transaction.date | date">
     </div>
@@ -25,7 +46,7 @@
     </button>
 </div>
 <div *ngIf="newTransaction" class="dltButton">
-    <button class="btn btn-primary" (click)="saveTransaction(transaction)">
+    <button class="btn btn-primary" (click)="saveTransaction()">
         Save transaction
     </button>
 </div>

@@ -4,8 +4,17 @@
     max-width: 30%;
   }
   
-  .dltButton {
+.dltButton {
     margin-top: 10px;
     margin-bottom: 50px;
     margin-left: 50px;
+}
+
+.multiline {
+  min-height: 50px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
 }
