@@ -17,6 +17,7 @@ export class CreditCardService {
   }
 
   postCreditCards(card:CreditCard): Observable<CreditCard[]>{
+    console.log(card)
     return this.http.post<CreditCard[]>(`${this.rootUrl}/credit_cards`,{
       Card_Number: card.card_number,
       Csc_Code: card.csc_code,
