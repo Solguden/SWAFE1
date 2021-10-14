@@ -6,6 +6,7 @@ import { CreditCardListItemComponent } from './components/credit-card-list-item/
 import { CreditCardRoutingModule } from './credit-card-routing.module';
 import { CreditCardDetailComponent } from './credit-card-detail/credit-card-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomDatePipe } from './custom-date-pipe';
 
 
 
@@ -14,7 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CreditCardAddComponent,
     CreditCardListComponent,
     CreditCardListItemComponent,
-    CreditCardDetailComponent
+    CreditCardDetailComponent,
+    CustomDatePipe
   ],
   imports: [
     CommonModule,

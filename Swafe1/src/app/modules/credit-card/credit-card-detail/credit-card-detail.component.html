@@ -17,7 +17,8 @@
 
     <div class="info-field">
         <label for="expiration">Expiration date:* </label>
-        <b>{{creditCard.expiration_date_month}} / {{creditCard.expiration_date_year}}</b>
+        <!-- <b>{{creditCard.expiration_date_month}} / {{creditCard.expiration_date_year}}</b> -->
+        <b>{{expDate | customDate: creditCard.expiration_date_month : creditCard.expiration_date_year}}</b>
     </div>
 
     <div class="info-field">

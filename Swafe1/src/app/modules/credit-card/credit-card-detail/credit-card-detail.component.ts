@@ -15,6 +15,8 @@ export class CreditCardDetailComponent implements OnInit {
   creditCard!: CreditCard
   transactionList!: Transaction[]
 
+  expDate: any;
+
   constructor(
     private activatedRoute: ActivatedRoute, 
     private cardService: CreditCardService,
