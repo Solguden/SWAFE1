@@ -3,32 +3,54 @@
 	<div class="form-wrapper">
 
 		<div class="input">
-			<label for="card_number">Card number:</label>
-			<input type="text" formControlName="card_number">
+			<div class="item-wrapper"> 
+				<label for="card_number">Card number:</label>
+			</div>
+			<div class="item-wrapper"> 
+				<input type="text" formControlName="card_number">
+			</div>
+			<br/>
+		</div>
+
+		<div class="input">
+			<div class="item-wrapper"> 
+				<label for="cardholder_name">Cardholder name:</label>
+				
+			</div>
+			<div class="item-wrapper"> 
+				<input type="text"  formControlName="cardholder_name">
+			</div>
 			<br />
 		</div>
 
 		<div class="input">
-			<label for="cardholder_name">Cardholder name:</label>
-			<input type="text"  formControlName="cardholder_name">
+			<div class="item-wrapper"> 
+				<label for="csc_code">CSC:</label>
+				
+			</div>
+			<div class="item-wrapper"> 
+				<input type="text" formControlName="csc_code">
+			</div>
 			<br />
 		</div>
 
 		<div class="input">
-			<label for="csc_code">CSC:</label>
-			<input type="text" formControlName="csc_code">
+			<div class="item-wrapper"> 
+				<label for="expiration_date">Expiration date:*</label>
+			</div>
+			<div class="item-wrapper"> 
+				<input type="month" formControlName="expiration_date">
+			</div>
 			<br />
 		</div>
 
 		<div class="input">
-			<label for="expiration_date">Expiration date:*</label>
-			<input type="month" formControlName="expiration_date">
-			<br />
-		</div>
-
-		<div class="input">
-			<label for="issuer">Issuer:</label>
-			<input type="text" formControlName="issuer">
+			<div class="item-wrapper"> 
+				<label for="issuer">Issuer:</label>
+			</div>
+			<div class="item-wrapper"> 
+				<input type="text" formControlName="issuer">	
+			</div>
 			<br />
 		</div>
 

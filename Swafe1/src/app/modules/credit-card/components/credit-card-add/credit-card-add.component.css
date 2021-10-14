@@ -11,3 +11,7 @@
     white-space: nowrap;
     padding-top: 10px;
 }
+
+.item-wrapper{
+    width: 45%;
+}
