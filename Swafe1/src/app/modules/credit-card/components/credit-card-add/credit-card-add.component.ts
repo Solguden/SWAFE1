@@ -14,11 +14,10 @@ export class CreditCardAddComponent implements OnInit {
   
   creditCardForm = this.formbuilder.group({
     card_number: ['', [Validators.pattern("^[0-9]*$"), Validators.minLength(7), Validators.maxLength(16), Validators.required]], //
-    cardholder_name: [''],
-    csc_code: [''],
-    expiration_date: [''],
-    // expiration_date_month: [''],
-    // expiration_date_year: [''],
+    cardholder_name: ['', Validators.required],
+    csc_code: ['', [Validators.pattern("^[0-9]*$"), Validators.minLength(3), Validators.maxLength(3), Validators.required]],
+    expiration_date_month: ['', [Validators.min(1), Validators.max(12), Validators.required]],
+    expiration_date_year: ['', [Validators.min(1), Validators.max(31), Validators.required]],
     issuer: ['']
   })
 
@@ -35,24 +34,9 @@ export class CreditCardAddComponent implements OnInit {
 	onSubmit() { 
 		console.log(this.creditCardForm.value)
 
-    let CC = this.creditCardForm.value
-    console.log(CC)
+    this.newCreditCard = this.creditCardForm.value
+    console.log(this.newCreditCard)
 
-    let newCreditCard: CreditCard = {
-      card_number : CC.card_number, 
-      cardholder_name : CC.cardholder_name,
-      csc_code: CC.csc_code,
-      expiration_date_month: CC.expiration_date.month,
-      expiration_date_year: CC.expiration_date.year,
-      issuer: CC.issuer}
-
-      console.log(newCreditCard)
-
-    // let CC: CreditCard = {card_number = this.creditCardForm}
-
-    // this.cardService.postCreditCards()
+    this.cardService.postCreditCards(this.newCreditCard)
 	} 
-
-
-
 }
