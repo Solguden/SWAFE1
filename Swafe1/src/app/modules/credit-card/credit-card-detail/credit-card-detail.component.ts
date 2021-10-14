@@ -53,7 +53,6 @@ export class CreditCardDetailComponent implements OnInit {
     this.cardService.deleteCreditCards(card.card_number).subscribe(res => {
       console.log(res)
       this.router.navigate(['/'])
-      // Lav pop-up vindue?
     })
   }
 }

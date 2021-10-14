@@ -1,7 +1,6 @@
 <div class="container">
     <div class="info-field" >
         <label for="cardholder">Cardholder name:</label>
-        <!-- <input ng-model="creditCard.cardholder_name"> -->
         <b id="cardholder">{{creditCard.cardholder_name}}</b>
     </div>
 
@@ -17,7 +16,6 @@
 
     <div class="info-field">
         <label for="expiration">Expiration date:* </label>
-        <!-- <b>{{creditCard.expiration_date_month}} / {{creditCard.expiration_date_year}}</b> -->
         <b>{{expDate | customDate: creditCard.expiration_date_month : creditCard.expiration_date_year}}</b>
     </div>
 
@@ -49,6 +47,7 @@
         Comment
     </div>
 </div>
+
 <div *ngIf="transactionList">
     <div class="title-container" *ngFor="let transaction of transactionList">
         <div class="item">
@@ -64,12 +63,6 @@
             {{transaction.comment}}
         </div>
     </div>
-
 </div>
-<!-- <div *ngIf="cardList">
-    <div *ngFor="let card of cardList">
-        <app-credit-card-list-item [creditCard]="card"> </app-credit-card-list-item>
-    </div>
-</div> -->
 
 
