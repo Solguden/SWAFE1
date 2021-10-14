@@ -15,3 +15,8 @@
 .item-wrapper{
     width: 45%;
 }
+
+.error {
+    color: red;
+    font-weight: bold;
+  }

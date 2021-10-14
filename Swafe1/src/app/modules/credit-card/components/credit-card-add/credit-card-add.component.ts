@@ -17,8 +17,8 @@ export class CreditCardAddComponent implements OnInit {
     card_number: ['', [Validators.pattern("^[0-9]*$"), Validators.minLength(7), Validators.maxLength(16), Validators.required]],
     cardholder_name: ['', Validators.required],
     csc_code: ['', [Validators.pattern("^[0-9]*$"), Validators.minLength(3), Validators.maxLength(3), Validators.required]],
-    expiration_date_month: ['', [Validators.min(1), Validators.max(12), Validators.required]],
-    expiration_date_year: ['', [Validators.min(1), Validators.max(31), Validators.required]],
+    expiration_date_month: ['',[Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(12), Validators.required]],
+    expiration_date_year: ['', [Validators.pattern("^[0-9]*$"), Validators.min(1), Validators.max(31), Validators.required]],
     issuer: ['']
   })
 
@@ -48,7 +48,6 @@ export class CreditCardAddComponent implements OnInit {
       }
 
       console.log(newCard)
-
       this.cardService.postCreditCards(newCard).subscribe(res => {
         this.router.navigate(['/'])
       })

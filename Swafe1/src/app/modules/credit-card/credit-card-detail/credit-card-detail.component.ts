@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CreditCard } from 'src/app/models/creditcard';
 import { Transaction } from 'src/app/models/transaction';
 import { TransactionService } from '../../transaction/transaction.service';
@@ -20,7 +20,8 @@ export class CreditCardDetailComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute, 
     private cardService: CreditCardService,
-    private transactionService: TransactionService) { }
+    private transactionService: TransactionService,
+    private router: Router) { }
 
   ngOnInit(): void {
     var number = Number(this.activatedRoute.snapshot.paramMap.get('card_number'))
@@ -34,24 +35,12 @@ export class CreditCardDetailComponent implements OnInit {
         this.getTransactions(this.creditCard)
       }
     })
- 
-    // this.activatedRoute.data.subscribe(d => console.log(d))
-    // let x = this.activatedRoute.snapshot.paramMap.get('data')
-    //this.activatedRoute.paramMap.subscribe(d =>console.log(d))
-    
-    // this.activatedRoute.queryParams.subscribe(params => console.log(params))
-
-    // this.state$ = this.activatedRoute.paramMap
-    // .pipe(map(() => window.history.state))
-    // let x = this.activatedRoute.snapshot.params.get()
-    // console.log(x)
   }
 
   getTransactions(card: CreditCard) {
     this.transactionService.getTransactions().subscribe(res => {
       var list = res
-      var specificTransactions = list.filter(c => c.credit_card.card_number === card.card_number) //(c => c.credit_card === card)
-      // console.log(specificTransactions)
+      var specificTransactions = list.filter(c => c.credit_card.card_number === card.card_number)
       if(specificTransactions) {
         this.transactionList = specificTransactions
         console.log(this.transactionList)
@@ -63,8 +52,8 @@ export class CreditCardDetailComponent implements OnInit {
     console.log(card)
     this.cardService.deleteCreditCards(card.card_number).subscribe(res => {
       console.log(res)
+      this.router.navigate(['/'])
       // Lav pop-up vindue?
-      // Redirect til home?
     })
   }
 }

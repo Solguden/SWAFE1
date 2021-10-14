@@ -8,6 +8,17 @@
 			</div>
 			<div class="item-wrapper"> 
 				<input type="text" formControlName="card_number">
+				<div *ngIf="card_number.invalid && (card_number.dirty || card_number.touched)">
+					<div *ngIf="card_number.errors?.required" class="error">
+					  Card number is required
+					</div>
+					<div *ngIf="card_number.errors?.pattern" class="error">
+						Card number must be a number
+					</div>
+					<div *ngIf="'card_number.errors?.minLength' || 'card_number.errors?.maxLength'" class="error">
+						Card number must be between 7-16 characters
+					</div>
+				</div>
 			</div>
 			<br/>
 		</div>
@@ -15,10 +26,14 @@
 		<div class="input">
 			<div class="item-wrapper"> 
 				<label for="cardholder_name">Cardholder name:</label>
-				
 			</div>
 			<div class="item-wrapper"> 
 				<input type="text"  formControlName="cardholder_name">
+				<div *ngIf="cardholder_name.invalid && (cardholder_name.dirty || cardholder_name.touched)">
+					<div *ngIf="cardholder_name.errors?.required" class="error">
+					  Cardholder name is required
+					</div>
+				</div>
 			</div>
 			<br />
 		</div>
@@ -29,26 +44,59 @@
 			</div>
 			<div class="item-wrapper"> 
 				<input type="text" formControlName="csc_code">
+				<div *ngIf="csc_code.invalid && (csc_code.dirty || csc_code.touched)">
+					<div *ngIf="csc_code.errors?.required" class="error">
+					  	CSC is required
+					</div>
+					<div *ngIf="csc_code.errors?.pattern" class="error">
+						CSC must be a number
+					</div>
+					<div *ngIf="'csc_code.errors?.minLength' || 'csc_code.errors?.maxLength'" class="error">
+						CSC must be 3 characters
+					</div>
+				</div>
 			</div>
 			<br />
 		</div>
 
 		<div class="input">
 			<div class="item-wrapper">
-				<label for="expiration_date_month">Expiration date (year):</label>
+				<label for="expiration_date_month">Expiration date (month):</label>
 			</div>
 			<div class="item-wrapper">
 				<input type="text" formControlName="expiration_date_month">
+				<div *ngIf="expiration_date_month.invalid && (expiration_date_month.dirty || expiration_date_month.touched)">
+					<div *ngIf="expiration_date_month.errors?.required" class="error">
+					  	Expiration month is required
+					</div>
+					<div *ngIf="expiration_date_month.errors?.pattern" class="error">
+						Expiration month must be a number
+					</div>
+					<div *ngIf="'expiration_date_month.errors?.min' || 'expiration_date_month.errors?.max'" class="error">
+						Expiration month must be between 1-12 
+					</div>
+				</div>
 			</div>
 			<br />
 		</div>
 
 		<div class="input">
 			<div class="item-wrapper">
-				<label for="expiration_date_year">Expiration date (month):</label>
+				<label for="expiration_date_year">Expiration date (year):</label>
 			</div>
 			<div class="item-wrapper">
 				<input type="text" formControlName="expiration_date_year">
+				<div *ngIf="expiration_date_year.invalid && (expiration_date_year.dirty || expiration_date_year.touched)">
+					<div *ngIf="expiration_date_year.errors?.required" class="error">
+					  	Expiration year is required
+					</div>
+					<div *ngIf="expiration_date_year.errors?.pattern" class="error">
+						Expiration year must be a number
+					</div>
+					<div *ngIf="'expiration_date_year.errors?.min' || 'expiration_date_year.errors?.max'" class="error">
+						Expiration year must be between 1-31 
+					</div>
+				</div>
 			</div>
 			<br />
 		</div>
