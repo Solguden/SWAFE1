@@ -15,3 +15,13 @@
 .item-wrapper{
     width: 45%;
 }
+
+.button-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+button{
+    width: 200px;
+}
